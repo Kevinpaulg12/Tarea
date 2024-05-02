@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "descripcion": "papas",
+    "precio": 10.0,
+    "cantidad": 3
+  },
+  {
+    "id": "2",
+    "descripcion": "chocolate",
+    "precio": 15.0,
+    "cantidad": 1
+  },
+  {
+    "id": "3",
+    "descripcion": "coca cola",
+    "precio": 20.0,
+    "cantidad": 2
+  },
+  {
+    "id": "4",
+    "descripcion": "cola",
+    "precio": 1.0,
+    "stock": 200
+  }
+]
