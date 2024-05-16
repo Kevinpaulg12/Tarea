@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Gestión de Ventas</title>
+</head>
+<body>
+    <h1>Ventas </h1>
+    <div id="menu" class="menu">
+    <button onclick="mostrarFormulario('añadir')">Crear Factura</button>
+    <button onclick="mostrarFormulario('actualizar')">Modificar Factura</button>
+    <button onclick="mostrarFormulario('eliminar')">Eliminar factura</button>
+    <button onclick="mostrarFormulario('consultar')">Consultar Facturas</button>
+    <button onclick="salir()">Salir</button>
+
+    <div id="formulario-añadir" style="display: none;">
+        <h2>Crear Factura</h2>
+        <form id="container">
+          <div class="container">
+              <label for="dni">dni:</label>
+              <input type="text" id="dni" name="dni">
+          </div>
+          <div class="container">
+              <label for="producto">Producto:</label>
+              <input type="text" id="producto" name="producto">
+          </div>
+          <div class="container">
+              <label for="stock">Cantidad:</label>
+              <input type="text" id="stock" name="stock">
+          </div>
+          <div class="container">
+              <button type="button" onclick="createVenta()">Generar Factura</button>
+          </div>
+      </form>
+    </div>
+
+    <div id="formulario-actualizar" style="display: none;">
+        <h2>Modificar Factura</h2>
+        <form id="form-actualizar">
+            <label for="id-actualizar">id:</label>
+            <input type="text" id="id-actualizar" name="id-actualizar"><br><br>
+            <label for="añadir-actualizar">Añadir productos:</label>
+            <input type="text" id="añadir-actualizar" name="añadir-actualizar"><br><br>
+            <label for="eliminar-actualizar">Eliminar producto:</label>
+            <input type="text" id="eliminar-actualizar" name="eliminar-actualizar"><br><br>
+            
+            <div class="container">
+              <button type="button" onclick="updateVenta()">Actualizar Venta</button>
+          </div>
+        </form>
+    </div>
+    <div id="formulario-eliminar" style="display: none;">
+        <h2>Eliminar Factura</h2>
+        <form id="form-eliminar">
+            <label for="id-eliminar">id:</label>
+            <input type="text" id="id-eliminar" name="id-eliminar"><br><br>
+            <div class="container">
+              <button type="button" onclick="deleteProducto()">Eliminar Producto</button>
+          </div>
+        </form>
+    </div>
+    <div id="formulario-consultar" style="display: none;">
+        <h2>Consultar Factura</h2>
+        <form id="form-consultar">
+            <label for="buscar-factura">Id de Factura:</label>
+            <input type="search" id="id-consultar" name="id-consultar"><br><br>
+            <div class="container">
+                <button type="button" onclick="consultVentas()">Buscar Factura</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Factura</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Productos</th>
+                    <th>Precios</th>
+                    <th>Iva</th>
+                    <th>Subtotal</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se mostrarán los clientes -->
+            </tbody>
+        </table>
+
+    <script>
+        function mostrarFormulario(tipo) {
+            let formAñadir = document.getElementById('formulario-añadir');
+            let formActualizar = document.getElementById('formulario-actualizar');
+            let formEliminar = document.getElementById('formulario-eliminar');
+            let formConsultar = document.getElementById('formulario-consultar');
+            if (tipo === 'añadir') {
+                formAñadir.style.display = 'block';
+                formActualizar.style.display = 'none';
+                formEliminar.style.display = 'none';
+                formConsultar.style.display = 'none';
+            } else if (tipo === 'actualizar') {
+                formActualizar.style.display = 'block';
+                formAñadir.style.display = 'none';
+                formEliminar.style.display = 'none';
+                formConsultar.style.display = 'none';
+            }else if (tipo === 'eliminar') {
+                formEliminar.style.display = 'block';
+                formActualizar.style.display = 'none';
+                formConsultar.style.display = 'none';
+                formAñadir.style.display = 'none';
+            }else if (tipo === 'consultar') {
+                formConsultar.style.display = 'block';
+                formEliminar.style.display = 'none';
+                formActualizar.style.display = 'none';
+                formAñadir.style.display = 'none';
+            }
+            
+        }
+
+        function salir() {
+            window.location.href = '/html/menu.html';
+        }
+    </script>
+    <script src="/js/LocalStorageFile.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/sales.js"></script>
+    <script src="/js/calculos.js"></script>
+    <script src="/js/croud.js"></script>
+
+</body>
+</html>
+
+
+
+

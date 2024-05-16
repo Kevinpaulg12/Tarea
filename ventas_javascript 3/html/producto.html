@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Gestión de Productos</title>
+</head>
+<body>
+    <h1>Menu Productos </h1>
+    <div id="menu" class="menu">
+    <button onclick="mostrarFormulario('añadir')">Añadir Producto</button>
+    <button onclick="mostrarFormulario('actualizar')">Actualizar Producto</button>
+    <button onclick="mostrarFormulario('eliminar')">Eliminar Producto</button>
+    <button onclick="mostrarFormulario('consultar')">Consultar Productos</button>
+    <button onclick="salir()">Salir</button>
+
+    <div id="formulario-añadir" style="display: none;">
+        <h2>Añadir Producto</h2>
+        <form id="container">
+          <div class="container">
+              <label for="id">Id:</label>
+              <input type="text" id="id" name="id" min="0" step="1">
+          </div>
+          <div class="container">
+              <label for="producto">Producto:</label>
+              <input type="text" id="producto" name="producto">
+          </div>
+          <div class="container">
+              <label for="precio">Precio:</label>
+              <input type="text" id="precio" name="precio" min="0" step="0.01">
+          </div>
+          <div class="container">
+              <label for="stock">Stock:</label>
+              <input type="text" id="stock" name="stock" min="0" step="1">
+          </div>
+          <div class="container">
+              <button type="button" onclick="crudProducts.create()">Guardar Producto</button>
+          </div>
+      </form>
+    </div>
+
+    <div id="formulario-actualizar" style="display: none;">
+        <h2>Actualizar Stock de Productos</h2>
+        <form id="form-actualizar">
+            <label for="id-actualizar">id:</label>
+            <input type="text" id="id-actualizar" name="id-actualizar" min="0" step="1"><br><br>
+            <label for="stock-actualizar">Nuevo Stock:</label>
+            <input type="text" id="stock-actualizar" name="stock-actualizar" min="0" step="1"><br><br>
+            <div class="container">
+              <button type="button" onclick="crudProducts.update()">Actualizar Producto</button>
+          </div>
+        </form>
+    </div>
+    <div id="formulario-eliminar" style="display: none;">
+        <h2>Eliminar Producto</h2>
+        <form id="form-eliminar">
+            <label for="id-eliminar">id:</label>
+            <input type="text" id="id-eliminar" name="id-eliminar" min="0" step="1"><br><br>
+            <div class="container">
+              <button type="button" onclick="crudProducts.delete()">Eliminar Producto</button>
+          </div>
+        </form>
+    </div>
+    <div id="formulario-consultar" style="display: none;">
+        <h2>Consultar Productos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se mostrarán los clientes -->
+            </tbody>
+        </table>
+
+    <script>
+        function mostrarFormulario(tipo) {
+            let formAñadir = document.getElementById('formulario-añadir');
+            let formActualizar = document.getElementById('formulario-actualizar');
+            let formEliminar = document.getElementById('formulario-eliminar');
+            let formConsultar = document.getElementById('formulario-consultar');
+            if (tipo === 'añadir') {
+                formAñadir.style.display = 'block';
+                formActualizar.style.display = 'none';
+                formEliminar.style.display = 'none';
+                formConsultar.style.display = 'none';
+            } else if (tipo === 'actualizar') {
+                formActualizar.style.display = 'block';
+                formAñadir.style.display = 'none';
+                formEliminar.style.display = 'none';
+                formConsultar.style.display = 'none';
+            }else if (tipo === 'eliminar') {
+                formEliminar.style.display = 'block';
+                formActualizar.style.display = 'none';
+                formConsultar.style.display = 'none';
+                formAñadir.style.display = 'none';
+            }else if (tipo === 'consultar') {
+                formConsultar.style.display = 'block';
+                formEliminar.style.display = 'none';
+                formActualizar.style.display = 'none';
+                formAñadir.style.display = 'none';
+            }
+            
+        }
+
+        function salir() {
+            window.location.href = '/html/menu.html';
+        }
+    </script>
+    <script src="/js/LocalStorageFile.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/product.js"></script>
+    <script src="/js/croud.js"></script>
+</body>
+</html>
