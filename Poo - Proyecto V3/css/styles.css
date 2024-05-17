@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background-color: #45a049;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+#formulario-añadir,
+#formulario-actualizar,
+#formulario-eliminar{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    border: 2px solid black;
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: rgb(100, 173, 237);
+    color: white;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.menu-container h2 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    display: block;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul li a:hover {
+    background-color: #ffffff;
+}
+
+.producto-adicional-verde {
+    background-color: #def3de; /* Código de color hexadecimal para verde */
+}
+
+#factura-consultar-id {
+    width: 25%; /* Ajusta este valor para cambiar el ancho del campo de entrada del ID */
+    margin: auto; /* Centra el campo de entrada en la página */
+    display: block; /* Hace que el campo de entrada se muestre como un bloque, lo que permite que se apliquen las propiedades de margen */
+}
+
+#formulario-consultar button {
+    margin-bottom: 50px; /* Añade un margen inferior al botón de consulta para agregar espacio entre el botón y la tabla */
+}
